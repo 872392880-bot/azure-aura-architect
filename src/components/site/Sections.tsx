@@ -1,7 +1,6 @@
 import { ArrowRight, Check, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import heroBg from "@/assets/hero-bg.jpg";
 import logoAsset from "@/assets/canyun-logo.png.asset.json";
 import { iconMap } from "./icons";
 import { Reveal } from "./Reveal";

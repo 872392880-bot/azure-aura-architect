@@ -8,7 +8,6 @@ import logoAsset from "@/assets/canyun-logo.png.asset.json";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const light = !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,18 +29,15 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled || open
           ? "border-b border-border bg-surface/90 backdrop-blur-md"
-          : "border-b border-transparent",
-        light && "text-primary-foreground",
+          : "border-b border-transparent bg-surface/60 backdrop-blur-sm",
       )}
     >
       <div className="container-page grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:h-20">
         <a href="#home" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex shrink-0 items-center justify-center rounded-lg bg-white px-1.5 py-1 shadow-sm">
-            <img src={logoAsset.url} alt="灿云 Logo" className="h-8 w-auto md:h-10" />
-          </span>
+          <img src={logoAsset.url} alt="灿云 Logo" className="h-9 w-auto shrink-0 md:h-11" />
           <span className="min-w-0">
-            <span className={cn("block truncate text-base font-bold", light ? "text-primary-foreground" : "text-ink")}>{settings.brand}</span>
-            <span className={cn("hidden truncate text-xs sm:block", light ? "text-primary-foreground/70" : "text-muted-foreground")}>
+            <span className="block truncate text-base font-bold text-ink">{settings.brand}</span>
+            <span className="hidden truncate text-xs text-muted-foreground sm:block">
               {settings.badge}
             </span>
           </span>
@@ -53,19 +49,14 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className={cn(
-                "rounded-lg px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
-                light
-                  ? "text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                  : "text-ink-soft hover:bg-brand-soft hover:text-brand",
-              )}
+              className="rounded-lg px-3.5 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-brand-soft hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {item.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="ml-3 inline-flex h-11 items-center rounded-xl bg-brand px-5 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
+            className="ml-3 inline-flex h-11 items-center rounded-xl bg-[image:var(--color-brand-gradient)] px-5 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
           >
             免费咨询
           </a>
@@ -76,12 +67,7 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "关闭菜单" : "打开菜单"}
-          className={cn(
-            "grid size-11 shrink-0 place-items-center rounded-xl border lg:hidden",
-            light
-              ? "border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground"
-              : "border-border bg-surface text-ink",
-          )}
+          className="grid size-11 shrink-0 place-items-center rounded-xl border border-border bg-surface text-ink lg:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -109,7 +95,7 @@ export function Header() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 mb-2 flex min-h-12 items-center justify-center rounded-xl bg-brand text-base font-semibold text-primary-foreground"
+              className="mt-2 mb-2 flex min-h-12 items-center justify-center rounded-xl bg-[image:var(--color-brand-gradient)] text-base font-semibold text-primary-foreground"
             >
               免费咨询云架构师
             </a>
