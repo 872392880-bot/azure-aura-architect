@@ -167,7 +167,7 @@ export function Advantages() {
                 delay={i * 70}
                 className="h-full rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="grid size-11 place-items-center rounded-xl bg-accent/15 text-accent-foreground">
+                <span className="grid size-11 place-items-center rounded-xl bg-brand-soft text-brand">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="mt-4 text-base font-bold text-ink sm:text-lg">{a.title}</h3>
@@ -354,7 +354,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={sending}
-              className="mt-6 inline-flex min-h-13 w-full items-center justify-center rounded-xl bg-brand px-6 text-base font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+              className="mt-6 inline-flex min-h-13 w-full items-center justify-center rounded-xl bg-[image:var(--color-brand-gradient)] px-6 text-base font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5 disabled:opacity-60"
             >
               {sending ? "提交中…" : "立即预约架构诊断"}
             </button>
