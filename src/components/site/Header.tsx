@@ -36,8 +36,8 @@ export function Header() {
     >
       <div className="container-page grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:h-20">
         <a href="#home" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-brand text-primary-foreground font-display text-base font-bold">
-            灿
+          <span className="flex shrink-0 items-center justify-center rounded-lg bg-white px-1.5 py-1 shadow-sm">
+            <img src={logoAsset.url} alt="灿云 Logo" className="h-8 w-auto md:h-10" />
           </span>
           <span className="min-w-0">
             <span className={cn("block truncate text-base font-bold", light ? "text-primary-foreground" : "text-ink")}>{settings.brand}</span>
@@ -46,6 +46,7 @@ export function Header() {
             </span>
           </span>
         </a>
+
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="主导航">
           {nav.map((item) => (

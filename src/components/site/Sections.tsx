@@ -378,11 +378,12 @@ export function Footer() {
       <div className="container-page grid gap-10 md:grid-cols-[1.4fr_1fr_1.2fr]">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-xl bg-primary-foreground/15 font-display font-bold text-primary-foreground">
-              灿
+            <span className="flex items-center justify-center rounded-xl bg-white px-2 py-1.5">
+              <img src={logoAsset.url} alt="灿云 Logo" className="h-9 w-auto" />
             </span>
             <span className="text-base font-bold text-primary-foreground">{settings.brand}</span>
           </div>
+
           <p className="mt-4 max-w-sm text-sm leading-7">
             {settings.company}，阿里云官方授权合作伙伴，提供一站式企业上云、等保合规、AI
             算力与云上运维托管服务。
