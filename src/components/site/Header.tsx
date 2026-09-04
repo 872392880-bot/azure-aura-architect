@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const light = !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -28,6 +29,7 @@ export function Header() {
         scrolled || open
           ? "border-b border-border bg-surface/90 backdrop-blur-md"
           : "border-b border-transparent",
+        light && "text-primary-foreground",
       )}
     >
       <div className="container-page grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:h-20">
@@ -36,8 +38,8 @@ export function Header() {
             灿
           </span>
           <span className="min-w-0">
-            <span className="block truncate text-base font-bold text-ink">{settings.brand}</span>
-            <span className="hidden truncate text-xs text-muted-foreground sm:block">
+            <span className={cn("block truncate text-base font-bold", light ? "text-primary-foreground" : "text-ink")}>{settings.brand}</span>
+            <span className={cn("hidden truncate text-xs sm:block", light ? "text-primary-foreground/70" : "text-muted-foreground")}>
               {settings.badge}
             </span>
           </span>
@@ -48,7 +50,12 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-brand-soft hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className={cn(
+                "rounded-lg px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                light
+                  ? "text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                  : "text-ink-soft hover:bg-brand-soft hover:text-brand",
+              )}
             >
               {item.label}
             </a>
@@ -66,7 +73,12 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "关闭菜单" : "打开菜单"}
-          className="grid size-11 shrink-0 place-items-center rounded-xl border border-border bg-surface text-ink lg:hidden"
+          className={cn(
+            "grid size-11 shrink-0 place-items-center rounded-xl border lg:hidden",
+            light
+              ? "border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground"
+              : "border-border bg-surface text-ink",
+          )}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
