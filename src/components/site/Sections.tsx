@@ -1,7 +1,6 @@
 import { ArrowRight, Check, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import heroBg from "@/assets/hero-bg.jpg";
 import logoAsset from "@/assets/canyun-logo.png.asset.json";
 import { iconMap } from "./icons";
 import { Reveal } from "./Reveal";
@@ -32,45 +31,42 @@ function SectionHead({
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-brand-deep pt-24 md:pt-28">
-      <img
-        src={heroBg}
-        alt=""
+    <section id="home" className="relative overflow-hidden bg-background pt-24 md:pt-28">
+      <div aria-hidden="true" className="absolute inset-0 grid-bg" />
+      <div
         aria-hidden="true"
-        width={1920}
-        height={1080}
-        className="pointer-events-none absolute inset-0 size-full object-cover opacity-90"
+        className="absolute inset-0 bg-[radial-gradient(70%_55%_at_85%_0%,oklch(0.7_0.19_50/22%),transparent_65%),radial-gradient(50%_40%_at_10%_100%,oklch(0.78_0.16_80/14%),transparent_70%)]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_0%,oklch(0.55_0.16_256/45%),transparent_70%)]"
+        className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent"
       />
-      <div className="container-page relative pb-14 pt-10 md:pb-24 md:pt-16">
+      <div className="container-page relative pb-16 pt-10 md:pb-28 md:pt-16">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-3.5 py-1.5 text-xs font-medium text-primary-foreground backdrop-blur-sm sm:text-sm">
-            <span className="size-1.5 rounded-full bg-accent" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand-soft px-3.5 py-1.5 text-xs font-medium text-brand sm:text-sm">
+            <span className="size-1.5 rounded-full bg-brand" />
             {settings.badge}
           </span>
-          <p className="mt-6 text-sm font-medium tracking-wide text-primary-foreground/70 sm:text-base">
+          <p className="mt-6 text-sm font-medium tracking-wide text-ink-soft sm:text-base">
             {settings.heroKicker}
           </p>
-          <h1 className="mt-3 font-display text-[2.5rem] font-bold leading-[1.15] text-primary-foreground sm:text-6xl">
+          <h1 className="mt-3 font-display text-[2.5rem] font-bold leading-[1.15] text-ink sm:text-6xl">
             {settings.heroTitle}
           </h1>
-          <p className="mt-5 max-w-xl text-[0.975rem] leading-8 text-primary-foreground/80 sm:text-lg sm:leading-9">
+          <p className="mt-5 max-w-xl text-[0.975rem] leading-8 text-ink-soft sm:text-lg sm:leading-9">
             {settings.heroSubtitle}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#contact"
-              className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-accent px-6 text-base font-semibold text-accent-foreground shadow-lift transition-transform hover:-translate-y-0.5"
+              className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-[image:var(--color-brand-gradient)] px-6 text-base font-semibold text-primary-foreground shadow-lift transition-transform hover:-translate-y-0.5"
             >
               免费咨询云架构师 <ArrowRight className="size-4" />
             </a>
             <a
               href="#services"
-              className="inline-flex min-h-13 items-center justify-center rounded-xl border border-primary-foreground/30 bg-primary-foreground/10 px-6 text-base font-semibold text-primary-foreground backdrop-blur-sm transition-colors hover:bg-primary-foreground/20"
+              className="inline-flex min-h-13 items-center justify-center rounded-xl border border-border bg-surface px-6 text-base font-semibold text-ink shadow-card transition-colors hover:border-brand/40 hover:text-brand"
             >
               浏览云产品
             </a>
@@ -80,9 +76,9 @@ export function Hero() {
             {settings.heroChips.map((chip) => (
               <li
                 key={chip}
-                className="inline-flex items-center gap-1.5 text-sm text-primary-foreground/75"
+                className="inline-flex items-center gap-1.5 text-sm text-ink-soft"
               >
-                <Check className="size-4 text-accent" /> {chip}
+                <Check className="size-4 text-brand" /> {chip}
               </li>
             ))}
           </ul>
@@ -171,7 +167,7 @@ export function Advantages() {
                 delay={i * 70}
                 className="h-full rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="grid size-11 place-items-center rounded-xl bg-accent/15 text-accent-foreground">
+                <span className="grid size-11 place-items-center rounded-xl bg-brand-soft text-brand">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="mt-4 text-base font-bold text-ink sm:text-lg">{a.title}</h3>
@@ -358,7 +354,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={sending}
-              className="mt-6 inline-flex min-h-13 w-full items-center justify-center rounded-xl bg-brand px-6 text-base font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+              className="mt-6 inline-flex min-h-13 w-full items-center justify-center rounded-xl bg-[image:var(--color-brand-gradient)] px-6 text-base font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5 disabled:opacity-60"
             >
               {sending ? "提交中…" : "立即预约架构诊断"}
             </button>

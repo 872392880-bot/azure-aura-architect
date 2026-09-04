@@ -47,38 +47,41 @@
   --font-display: "Space Grotesk", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui,
     sans-serif;
-  --shadow-card: 0 1px 2px oklch(0.25 0.06 258 / 6%), 0 12px 32px -18px oklch(0.25 0.06 258 / 32%);
-  --shadow-lift: 0 2px 6px oklch(0.25 0.06 258 / 8%), 0 24px 48px -22px oklch(0.25 0.06 258 / 40%);
+  --shadow-card: 0 1px 2px oklch(0.35 0.05 50 / 5%), 0 12px 32px -18px oklch(0.45 0.08 45 / 22%);
+  --shadow-lift: 0 2px 6px oklch(0.4 0.06 50 / 7%), 0 24px 48px -22px oklch(0.5 0.1 45 / 32%);
+  --color-brand-gradient: linear-gradient(120deg, oklch(0.62 0.22 38), oklch(0.68 0.2 55) 55%, oklch(0.75 0.17 75));
 }
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.995 0.002 250);
-  --foreground: oklch(0.22 0.03 258);
-  --ink: oklch(0.19 0.035 258);
-  --ink-soft: oklch(0.48 0.02 258);
+  --background: oklch(0.995 0.003 70);
+  --foreground: oklch(0.26 0.03 255);
+  --ink: oklch(0.27 0.035 255);
+  --ink-soft: oklch(0.47 0.02 255);
   --surface: oklch(1 0 0);
-  --surface-soft: oklch(0.972 0.008 250);
+  --surface-soft: oklch(0.972 0.008 75);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 258);
+  --card-foreground: oklch(0.26 0.03 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 258);
-  --brand: oklch(0.52 0.16 256);
-  --brand-deep: oklch(0.28 0.09 262);
-  --brand-soft: oklch(0.95 0.025 252);
-  --primary: oklch(0.52 0.16 256);
-  --primary-foreground: oklch(0.99 0.005 250);
-  --secondary: oklch(0.96 0.012 250);
-  --secondary-foreground: oklch(0.28 0.05 258);
-  --muted: oklch(0.965 0.008 250);
-  --muted-foreground: oklch(0.52 0.02 258);
-  --accent: oklch(0.74 0.16 62);
-  --accent-foreground: oklch(0.22 0.06 60);
+  --popover-foreground: oklch(0.26 0.03 255);
+  /* 品牌橙（取自 Logo 云形渐变） */
+  --brand: oklch(0.63 0.21 42);
+  --brand-deep: oklch(0.28 0.035 255);
+  --brand-soft: oklch(0.95 0.035 65);
+  --primary: oklch(0.63 0.21 42);
+  --primary-foreground: oklch(0.99 0.005 70);
+  --secondary: oklch(0.96 0.012 70);
+  --secondary-foreground: oklch(0.3 0.03 255);
+  --muted: oklch(0.965 0.008 75);
+  --muted-foreground: oklch(0.5 0.02 255);
+  /* 暖金点缀（Logo 渐变尾部的金黄） */
+  --accent: oklch(0.78 0.16 80);
+  --accent-foreground: oklch(0.3 0.06 60);
   --destructive: oklch(0.58 0.22 27);
-  --destructive-foreground: oklch(0.99 0.005 250);
-  --border: oklch(0.915 0.012 250);
-  --input: oklch(0.9 0.012 250);
-  --ring: oklch(0.52 0.16 256);
+  --destructive-foreground: oklch(0.99 0.005 70);
+  --border: oklch(0.918 0.01 70);
+  --input: oklch(0.9 0.012 70);
+  --ring: oklch(0.63 0.21 42);
 }
 
 @layer base {
@@ -133,8 +136,8 @@
 
 @utility grid-bg {
   background-image:
-    linear-gradient(to right, oklch(0.52 0.16 256 / 7%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.52 0.16 256 / 7%) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.63 0.21 42 / 6%) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.63 0.21 42 / 6%) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
