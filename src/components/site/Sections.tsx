@@ -234,6 +234,7 @@ export function News() {
 
 export function Contact() {
   const [sending, setSending] = useState(false);
+  const [qrOk, setQrOk] = useState(true);
 
   const fields = [
     { id: "name", label: "姓名", required: true, type: "text", ph: "您的称呼" },
@@ -286,14 +287,23 @@ export function Contact() {
             </ul>
 
             <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4 rounded-2xl border border-border bg-surface p-6 shadow-card">
-              <img
-                src={contact.qr}
-                alt="微信二维码"
-                loading="lazy"
-                width={128}
-                height={128}
-                className="size-24 shrink-0 rounded-lg border border-border object-contain sm:size-28"
-              />
+              {qrOk ? (
+                <img
+                  src={contact.qr}
+                  alt="微信二维码"
+                  loading="lazy"
+                  width={128}
+                  height={128}
+                  onError={() => setQrOk(false)}
+                  className="size-24 shrink-0 rounded-lg border border-border object-contain sm:size-28"
+                />
+              ) : (
+                <span className="grid size-24 shrink-0 place-items-center rounded-lg border border-dashed border-border bg-surface-soft text-center text-xs leading-5 text-muted-foreground sm:size-28">
+                  微信
+                  <br />
+                  二维码
+                </span>
+              )}
               <div className="min-w-0">
                 <p className="text-base font-bold text-ink">微信扫码咨询</p>
                 <p className="mt-1.5 text-[0.9rem] leading-7 text-ink-soft">{contact.qrNote}</p>
