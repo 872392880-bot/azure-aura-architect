@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import { nav, settings, contact } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/canyun-logo.png.asset.json";
+
 
 export function Header() {
   const [open, setOpen] = useState(false);

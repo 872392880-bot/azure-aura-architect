@@ -77,21 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "灿云 · 卓牛云 | 阿里云官方授权合作伙伴" },
+      { name: "description", content: "安徽灿云信息技术有限公司，阿里云官方授权合作伙伴，提供企业上云、云基础设施、AI 算力 / GPU、等保安全合规、云计算咨询与云上运维托管服务。" },
+      { name: "author", content: "安徽灿云信息技术有限公司" },
+      { property: "og:title", content: "灿云 · 卓牛云 | 阿里云官方授权合作伙伴" },
+      { property: "og:description", content: "安徽灿云信息技术有限公司，阿里云官方授权合作伙伴，提供企业上云、云基础设施、AI 算力 / GPU、等保安全合规、云计算咨询与云上运维托管服务。" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -105,6 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
