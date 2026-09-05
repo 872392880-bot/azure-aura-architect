@@ -243,6 +243,7 @@ export function Capabilities() {
                   featured
                     ? "border-transparent bg-brand-deep text-primary-foreground/75 shadow-lift lg:col-span-2 lg:row-span-1"
                     : "border-border bg-surface shadow-card lg:hover:shadow-lift",
+                  !featured && i === capabilities.length - 1 ? "lg:col-span-2" : "",
                 ].join(" ")}
               >
                 {featured ? (
@@ -362,7 +363,7 @@ export function Advantages() {
               </span>
             </div>
             <h2 className="mt-4 text-[1.9rem] font-bold leading-[1.2] text-ink sm:text-[2.6rem]">
-              为什么选择{settings.company.slice(2, 4)}云
+              为什么选择{settings.company.slice(2, 4)}
             </h2>
             <p className="mt-4 max-w-md text-base leading-8 text-ink-soft">
               阿里云官方授权合作伙伴，十年一线交付经验。我们不卖用不上的资源，只交付真正跑得稳的架构。

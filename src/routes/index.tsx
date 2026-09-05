@@ -5,10 +5,12 @@ import {
   Advantages,
   Capabilities,
   Contact,
+  Faq,
   Footer,
   Hero,
   MobileCallBar,
   News,
+  Process,
   Stats,
 } from "@/components/site/Sections";
 
@@ -38,8 +40,10 @@ function Index() {
         <Hero />
         <Stats />
         <Capabilities />
+        <Process />
         <Advantages />
         <News />
+        <Faq />
         <Contact />
       </main>
       <Footer />
